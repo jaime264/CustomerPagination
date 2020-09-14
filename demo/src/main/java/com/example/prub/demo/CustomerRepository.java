@@ -10,5 +10,5 @@ public interface CustomerRepository extends JpaRepository<Customer,Integer> {
 
 
     Page<Customer> findAllByFirstNameOrLastName(String name, String lastName, Pageable pageable);
-
+    Page<Customer> findAllByFirstNameContainingOrLastNameContaining(String name, String lastName, Pageable pageable);
 }
