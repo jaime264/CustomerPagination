@@ -41,6 +41,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Page<Customer> findAllByNameContaining(String name, Pageable pageable) {
-        return repository.findAllByFirstNameOrLastName(name, name, pageable);
+        return repository.findAllByFirstNameContainingOrLastNameContaining(name, name, pageable);
     }
 }
