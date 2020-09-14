@@ -54,6 +54,12 @@ class _HomePageState extends State<HomePage> {
       children: [
         TextField(
           controller: _filter,
+          onChanged: (value){
+                _name = _filter.text;
+                _customers = null;
+                _pageNumber = 1;
+                _fetchGepCustomers();
+          },
           decoration: InputDecoration(
             suffixIcon: IconButton(
               icon: Icon(Icons.search),
